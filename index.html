@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <style>
+      .wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+      .wrapper > * {
+        background: rgb(234, 255, 150);
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid black;
+      }
+      .main-head {
+        grid-column: 1/4;
+      }
+      .main-nav {
+        grid-column: 1/-1;
+        display: flex;
+      }
+      .main-nav ul {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+      }
+      .side {
+        grid-column: 1/2;
+        grid-row: 3/4;
+      }
+      .content {
+        grid-column: 2/-1;
+      }
+      .main-footer {
+        grid-column: 2/-1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="main-head">The header</header>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="">Nav 1</a></li>
+          <li><a href="">Nav 2</a></li>
+          <li><a href="">Nav 3</a></li>
+        </ul>
+      </nav>
+      <article class="content">
+        <h1>Main article area</h1>
+        <p>
+          In this layout, we display the areas in source order for any screen
+          less that 500 pixels wide. We go to a two column layout, and then to a
+          three column layout by redefining the grid, and the placement of items
+          on the grid.
+        </p>
+      </article>
+      <aside class="side">Sidebar</aside>
+      <div class="ad">Advertising</div>
+      <footer class="main-footer">The footer</footer>
+    </div>
+  </body>
+</html>
